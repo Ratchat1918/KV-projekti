@@ -1,0 +1,330 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #171A25;
+    background-color: #171A25;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #00336a;
+    position: relative; /* Ensure it can overlap */
+    z-index: 10; /* Higher z-index to overlay registration */
+}
+
+.logo img {
+    height: 50px; /* Logo height */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px; /* Space between items */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700; /* Bold text */
+    font-size: 18px;
+    transition: opacity 0.3s;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    opacity: 0.7; /* Adjust opacity on hover */
+}
+
+.hamburger {
+    display: none; /* Hide hamburger by default */
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Styles for Navbar */
+@media (max-width: 911px) {
+    .navbar {
+        background-color: #171A25; /* Gray background for mobile */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #171A25;
+        width: 100%;
+        max-height: 0; /* Initially hidden */
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+        z-index: 5; /* Ensure it overlays registration */
+    }
+
+    .nav-links.active {
+        max-height: 300px; /* Adjust as needed */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on smaller screens */
+    }
+
+    .logo img {
+        height: 40px; /* Smaller logo for mobile */
+    }
+}
+
+/* Form Styles */
+.container {
+    position: relative;
+    max-width: 500px; /* Reduced max-width */
+    width: 100%;
+    background: #171A25;
+    padding: 15px; /* Reduced padding */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 2);
+    margin: 50px auto 50px auto; /* Increased top margin */
+}
+
+.container header {
+    font-size: 1.5rem;
+    background-color: #ffffff;
+    font-weight: 500;
+    text-align: center;
+}
+
+.form {
+    margin-top: 20px; /* Reduced margin */
+    font-weight: 700;
+    color: black;
+}
+
+.input-box {
+    width: 100%;
+    margin-top: 15px; /* Reduced margin */
+}
+
+.input-box label {
+    color: #ffffff;
+}
+
+.input-box input {
+    height: 40px; /* Reduced height */
+    width: 100%;
+    outline: none;
+    font-size: 0.9rem; /* Slightly smaller font size */
+    color: black;
+    margin-top: 5px; /* Reduced margin */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 10px; /* Reduced padding */
+}
+
+.input-box input:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form button {
+    height: 50px; /* Reduced height */
+    width: 100%;
+    color: black;
+    font-size: 0.9rem; /* Slightly smaller font size */
+    font-weight: 400;
+    margin-top: 20px; /* Reduced margin */
+    border: none;
+    transition: background-color 0.4s ease;
+    background: #00336a;
+}
+
+.form button:hover {
+    background: #00336a;
+}
+
+/* Checkbox styling */
+.input-box input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    accent-color: #00336a;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #00336a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.caption {
+    margin: 20px;
+    flex: 1;
+}
+
+.caption h4 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.links li {
+    margin: 10px 0;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #ff4081; /* Change color on hover */
+}
+
+.socials {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.socials-text {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.socials img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.socials img:hover {
+    transform: scale(1.1);
+}
+
+.copyright {
+    font-size: 12px;
+    margin-top: 20px;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (min-width: 600px) and (max-width: 900px) {
+    footer {
+        font-size: 1em;
+    }
+
+    .caption h4 {
+        font-size: 1.3em;
+    }
+
+    .caption p {
+        font-size: 15px;
+    }
+
+    .copyright {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .caption {
+        margin: 10px;
+    }
+}
+
+
+.details {
+    margin-bottom: 15px; /* Space between details label and form */
+    color: white;
+    font-weight: 700;
+}
+
+.details label {
+    font-size: 18px; /* Make it more visible */
+    color: white;
+    font-weight: 300; /* Default font weight */
+    display: block; /* Make sure all labels occupy space */
+    margin-bottom: 5px; /* Space between labels */
+}
+
+.label1 {
+    font-weight: 700; /* Bold font weight for main label */
+}
+
+.details label:nth-of-type(2),
+.details label:nth-of-type(3) {
+    font-weight: 700; /* Bold font weight for date and number */
+}
+
+@media (max-width: 600px) {
+    /* These styles are already applied by default */
+}
+
+@media (max-width: 380px) {
+    .details label:nth-of-type(2) {
+        margin-top: 10px; /* Space above the date label */
+    }
+}
+
+.linkc {
+    color: #2828f9;;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.linkc:hover {
+    color: #2626e3;
+    opacity: 0.7;
+    transition: 0.3s ease;
+}
+
+.activity-date-label {
+    color: white;
+}
+
+.inactive {
+    color: red; /* Change text color to red */
+    pointer-events: none; /* Prevent clicks */
+    opacity: 0.5; /* Optional: make it look faded */
+}

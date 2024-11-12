@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Test</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a class="logolink" href="http://www.tenerife.es/" target="_blank">
+                <img src="{% static 'img/logo.png' %}" alt="Logo"/>
+            </a>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="https://centralreservas.tenerife.es/?a=1" target="_blank">SENDEROS</a></li>
+            <li><a href="https://centralreservas.tenerife.es/?a=2" target="_blank">CIRCULACION</a></li>
+            <li><a href="https://centralreservas.tenerife.es/?a=3" target="_blank">BARRANCO</a></li>
+            <li><a href="https://centralreservas.tenerife.es/?a=4" target="_blank">ESCALADA</a></li>
+            <li><a href="https://centralreservas.tenerife.es/?a=5" target="_blank">CAMPING</a></li>
+            <li><a href="https://centralreservas.tenerife.es/?a=8" target="_blank">GRUPOS</a></li>
+            <li><a href="https://centralreservas.tenerife.es/reservas" target="_blank">RESERVAS</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+    </nav>
+
+    <section class="container">
+        <form class="form" id="myForm" method="POST" action="{% url 'reserva' %}">
+            {% csrf_token %}
+            <div class="details">
+                <span id="activity-date-label"></span><br>
+                <input type="hidden" id="activity-date" name="activity_date" />
+    
+                <span id="num-persons-label"></span>
+                <input type="hidden" id="num-persons" name="num_persons" />
+            </div>
+            
+    
+            <div class="input-box">
+                <label>Nombre de grupo o colectivo</label>
+                <input type="text" name="group_name" placeholder="Enter group name" />
+            </div>
+    
+            <div class="input-box">
+                <label>Nombre *</label>
+                <input type="text" name="first_name" placeholder="Enter name" />
+            </div>
+    
+            <div class="input-box">
+                <label>Apellidos *</label>
+                <input type="text" name="last_name" placeholder="Enter surname" />
+            </div>
+    
+            <div class="input-box">
+                <label>DNI/NIF *</label>
+                <input type="text" name="dni" placeholder="Enter DNI/NIF" />
+            </div>
+    
+            <div class="input-box">
+                <label>Email *</label>
+                <input type="email" name="email" placeholder="Enter email" />
+            </div>
+    
+            <div class="input-box">
+                <label>Email de confirmación *</label>
+                <input type="email" name="confirm_email" placeholder="Confirm email" />
+            </div>
+    
+            <div class="input-box">
+                <label>Teléfono *</label>
+                <input type="tel" name="phone" placeholder="Enter phone number" />
+            </div>
+    
+            <div class="input-box">
+                <input type="checkbox" id="accept-conditions" name="accept_conditions" />
+                <label for="accept-conditions">He leído y acepto <a target="_blank" class="linkc" href="/condiciones/">Las condiciones</a></label>
+            </div>
+    
+            <button type="submit" class="button" id="button">Submit</button>
+    
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="caption">
+                <h4>Contactar</h4>
+                <p>
+                    Dirección: Cabildo de Tenerife,<br>
+                    Plaza de España. 1,<br>
+                    38003 Santa Cruz de Tenerife.<br>
+                    Teléfono: 901 501 901 / 922 239 500
+                </p>
+            </div>
+            <div class="caption">
+                <h4>Servicios de la sede</h4>
+                <ul class="links">
+                    <li><a href="#">Anuncios</a></li>
+                    <li><a href="#">Verificación de documentos</a></li>
+                    <li><a href="#">Asesoría electrónica</a></li>
+                    <li><a href="#">Verificación de certificados</a></li>
+                    <li><a href="#">Fecha y hora</a></li>
+                </ul>
+            </div>
+            <div class="caption">
+                <h4>Enlaces de interés</h4>
+                <ul class="links">
+                    <li><a href="https://www.tenerife.es/portalcabtfe/es/" target="_blank">Portal</a></li>
+                    <li><a href="https://www.bopsantacruzdetenerife.org/" target="_blank">B.O.P.</a></li>
+                    <li><a href="https://www.tenerife.es/portalcabtfe/index.php?option=com_ocmenutree&view=menuchildren&Itemid=300&lang=es" target="_blank">Empleo</a></li>
+                    <li><a href="https://www.tenerife.es/portalcabtfe/index.php?option=com_ocperfilcontratante&view=licitaciones&Itemid=965&lang=es" target="_blank">Contratante</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="socials">
+            <div class="socials-text">Redes Sociales</div>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="{% static 'img/facebook.webp'%}" alt="Facebook">
+            </a>
+            <a href="https://www.x.com" target="_blank">
+                <img src="{% static 'img/Xlogo.png' %}" alt="Twitter">
+            </a>
+        </div>
+
+        <div class="copyright">
+            Copyright ©2014 Cabildo de Tenerife
+        </div>
+    </footer>
+
+    <script src="{% static 'scripts/main.js' %}" type="module"></script>
+</body>
+</html>

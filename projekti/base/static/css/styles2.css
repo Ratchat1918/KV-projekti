@@ -1,0 +1,659 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white; /* Default text color */
+    background-color: #171A25;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #00336a; /* Blue background for the website */
+    position: relative; /* Ensure it can overlap */
+    z-index: 10; /* Higher z-index to overlay registration */
+}
+
+.logo img {
+    height: 50px; /* Logo height */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px; /* Space between items */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700; /* Bold text */
+    font-size: 18px;
+    transition: opacity 0.3s;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    opacity: 0.7; /* Adjust opacity on hover */
+}
+
+.hamburger {
+    display: none; /* Hide hamburger by default */
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Styles for Navbar */
+@media (max-width: 911px) {
+    .navbar {
+        background-color: #00336a; /* Blue background for the website */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #00336a; /* Blue background for the website */
+        width: 100%;
+        max-height: 0; /* Initially hidden */
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+        z-index: 5; /* Ensure it overlays registration */
+    }
+
+    .nav-links.active {
+        max-height: 300px; /* Adjust as needed */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on smaller screens */
+    }
+
+    .logo img {
+        height: 40px; /* Smaller logo for mobile */
+    }
+}
+
+/* Form Styles */
+.container {
+    position: relative;
+    max-width: 500px; /* Reduced max-width */
+    width: 100%;
+    background: #171A25;
+    padding: 15px; /* Reduced padding */
+    border-radius: 8px;
+    margin: 20px auto 50px auto; /* Increased top margin */
+}
+
+.container header {
+    font-size: 1.5rem;
+    background-color: #00336a; /* Blue background for the website */
+    font-weight: 500;
+    text-align: center;
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #00336a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.caption {
+    margin: 20px;
+    flex: 1;
+}
+
+.caption h4 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.links li {
+    margin: 10px 0;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #ff4081; /* Change color on hover */
+}
+
+.socials {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.socials-text {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.socials img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.socials img:hover {
+    transform: scale(1.1);
+}
+
+.copyright {
+    font-size: 12px;
+    margin-top: 20px;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (min-width: 600px) and (max-width: 900px) {
+    footer {
+        font-size: 1em;
+    }
+
+    .caption h4 {
+        font-size: 1.3em;
+    }
+
+    .caption p {
+        font-size: 15px;
+    }
+
+    .copyright {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .caption {
+        margin: 10px;
+    }
+}
+
+
+.details {
+    margin-bottom: 15px; /* Space between details label and form */
+}
+
+.details label:not(.label1){
+    display: block; /* Ensure it occupies space */
+    font-size: 18px; /* Make it more visible */
+    color: #333; /* Adjust color as needed */
+    font-weight: 300;
+}
+
+.label1 {
+    display: block; /* Ensure it occupies space */
+    font-size: 18px; /* Make it more visible */
+    color: #333; /* Adjust color as needed */
+    font-weight: 700;
+}
+
+.calendar {
+    margin: 0 auto;
+    width: clamp(320px, 400px, 90%);
+    padding: 1rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.calendar header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calendar nav {
+    display: flex;
+    align-items: center;
+}
+
+.calendar ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.calendar ul li {
+    width: calc(100% / 7);
+    position: relative;
+    z-index: 2;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#prev,
+#next {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#prev::before,
+#next::before {
+    content: "";
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    border-color: #ccc;
+}
+
+#next::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#prev::before {
+    transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.days {
+    font-weight: 600;
+}
+
+.dates li.today {
+    color: #fff;
+}
+
+.dates li.today::before {
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+.active-week {
+    background-color: lightblue; /* Change to your preferred color */
+}
+
+
+.dates li {
+    color: white; /* Ensure visible color */
+    min-height: 40px; /* Set a minimum height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent; /* Temporary for debugging */
+}
+
+.active-week {
+    background-color: #add8e6; /* More noticeable */
+}
+
+
+.calendar {
+    margin: 0 auto;
+    width: 100%; /* Use percentage for responsiveness */
+    max-width: 400px; /* Limit maximum width */
+    padding: 1rem;
+    background-color: #00336a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.calendar header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calendar nav {
+    display: flex;
+    align-items: center;
+}
+
+.calendar ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.calendar ul li {
+    width: calc(100% / 7); /* Responsive column width */
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Add padding for touch targets */
+}
+
+@media (max-width: 600px) {
+    .calendar ul li {
+        width: calc(100% / 7); /* Maintain 7 columns */
+        min-height: 50px; /* Increase height for easier tapping */
+    }
+
+    .calendar {
+        padding: 0.5rem; /* Reduce padding on smaller screens */
+    }
+}
+
+.days {
+    font-weight: 600;
+    flex: 1 0 14.28%; /* Each day label takes 1/7th of the width */
+}
+
+.dates li {
+    color: white; /* Ensure visible color */
+    min-height: 40px; /* Set a minimum height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent; /* Temporary for debugging */
+}
+
+.active-week {
+    background-color: #00420e; /* More noticeable */
+    font-weight: 700;
+}
+
+.active-week:hover {
+    cursor: pointer;
+}
+
+.today {
+    font-weight: bold;
+    color: red; /* Make today’s date more noticeable */
+}
+
+
+.dates li.selected {
+    background-color: #ff4081; /* Color for selected day */
+    color: white; /* Change text color for better contrast */
+}
+
+.dates li {
+    color: rgb(255, 255, 255); /* Ensure visible color */
+    min-height: 40px; /* Set a minimum height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent; /* Temporary for debugging */
+}
+
+.active-week {
+    background-color: #0404cc; /* More noticeable */
+    font-weight: 700;
+    cursor: pointer; /* Change cursor to pointer for clickable days */
+}
+
+.active-week:hover {
+    opacity: 0.7;
+    transition: 0.3s ease;
+}
+
+
+
+.selection {
+    width: 100%;
+    margin-top: 20px; /* Spacing above the selection section */
+    padding: 10px; /* Padding inside the selection section */
+    border-radius: 5px; /* Rounded corners */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Space between elements */
+}
+
+label {
+    font-size: 1.2em; /* Adjust label font size */
+    margin-bottom: 5px; /* Space below the label */
+}
+
+input[type="number"] {
+    width: 100%; /* Full width for the input */
+    padding: 5px; /* Padding inside the input */
+}
+
+/* Error styling */
+.input-error {
+    box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.7); /* Red box shadow */
+    border-color: red; /* Optional: change border color to red */
+}
+
+@media (max-width: 600px) {
+    .selection {
+        width: 100%; /* Full width on small screens */
+    }
+}
+
+.selected-date {
+    background-color: #007BFF; /* Change to a visible color */
+    color: white; /* Text color for contrast */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Optional: shadow effect */
+}
+
+.selected-date:hover{
+    background-color: #0f74e0; 
+    transition: 0.3s ease;
+}
+
+.next-step-button {
+    padding: 10px 15px; /* Padding for better touch area */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em; /* Font size */
+    background-color: #ccc; /* Default color */
+    color: white; /* Text color */
+    cursor: not-allowed; /* Default cursor when disabled */
+    transition: background-color 0.3s; /* Smooth transition for color change */
+    font-weight: 700 ;
+}
+
+/* Button when enabled */
+.next-step-button:enabled {
+    background-color: #00336a; /* Green color when enabled */
+    cursor: pointer; /* Pointer cursor when enabled */
+}
+
+/* Optional: Add hover effect when enabled */
+.next-step-button:enabled:hover {
+    opacity: 0.7;
+    transition: 0.3s ease;
+}
+
+/* Optional: Add a disabled state style */
+.next-step-button:disabled {
+    background-color: #ccc; /* Light grey when disabled */
+    color: #666; /* Grey text */
+}
+.reservation-label{
+    text-align: center; /* Center the text horizontally */
+    margin-bottom: 30px; /* Optional: Add some space below the label */
+    font-size: 1.5em; /* Optional: Adjust the font size */
+    font-weight: bold; /* Optional: Make it bold */
+    margin-top: -30px;
+    color: #171A25;
+}
+
+/*Slideshow styles*/
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    margin-top: 60px;
+
+  }
+  
+  /* Hide the images by default */
+.mySlides{
+    margin-top: -25px;
+    justify-content: center;   
+    display: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dots-container {
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.mySlides img {
+    width: 100%;
+    max-width: 700px; /* Ensure images take full width of the slide */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+}
+.dot {  
+    height: 10px;
+    width: 25px;
+    margin: 0 4px;
+    background-color: #00336a;
+    border-radius: 4px; /* Slightly rounded corners */
+    display: inline-block;
+    transition: background-color 0.6s ease, transform 0.3s ease;
+}
+
+.dot:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+  
+/* Fading animation */
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+.booking-text{
+    color: #ffffff;
+    text-align: center;
+}
+.booking-text:h1{
+    text-align: center;
+}
+.booking-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+
+.card h2, p, hr{
+    margin-top: 10px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+h2, h3 {
+    margin: 0;
+}
+
+.card {
+    background-color: #00336a;
+    border-radius: 8px;
+    padding: 20px; /* Adjusted padding */
+    margin: 10px;
+    flex: 1 1 calc(33% - 40px); /* Three cards per row with some margin */
+    transition: transform 0.2s;
+    display: flex; /* Add flex display */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Align content to the top */
+    height: 100%;
+    min-height: 280px;
+    color: white; /* Adjust text color */
+    font-weight: 700;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 40px); /* Two cards per row on medium screens */
+    }
+    .card p, .card h1, .card h2 { /* Adjust text styles */
+        font-size: 1.1em; /* Example font size for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%; /* One card per row on small screens */
+    }
+    .card p, .card h1, .card h2 { /* Adjust text styles */
+        font-size: 0.95em; /* Example font size for small screens */
+    }
+}
+
+
+.dates li.inactive {
+    color: white;
+    background-color: #00336a;
+    pointer-events: none;
+    font-weight: 400;
+}

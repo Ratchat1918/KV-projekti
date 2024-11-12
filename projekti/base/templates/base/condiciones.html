@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles3.css' %}">
+    <title>Test</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a class="logolink" href="http://www.tenerife.es/" target="_blank">
+                <img src="{% static 'img/logo.png' %}" alt="Logo" />
+            </a>
+        </div>
+    </nav>
+    <div id="box1">
+        <h1 id="labelDecondiciones">las condiciones:</h1>    
+        <ul id="listDecondiciones">
+            <li>El grupo estará integrado por un máximo de 15 participantes.</li>
+            <li>La visita debe transcurrir exclusivamente por los senderos que se muestran en el mapa de esta actividad y señalizados o indicados en la cartelería del espacio natural.</li>
+            <li>No se recolectará material de ningún tipo, ni se realizarán capturas ni se molestará a las especies de la fauna. Los visitantes se limitarán a observarlas en su hábitat.</li>
+            <li>No se dejarán restos de alimentos o de basuras en el interior del espacio.</li>
+            <li>Se deberán atender y acatar cuantas indicaciones se hagan por el personal de medio ambiente.</li>
+        </ul>
+        <p id="p1">El incumplimiento de las condiciones expuestas puede ser constitutivo de infracción administrativa sancionable de conformidad con la legislación vigente en materia medioambiental.</p>
+        <p id="p2">Para garantizar la seguridad de las personas, esta autorización podrá quedar sin efecto por circunstancias meteorológicas adversas o situaciones de alto riesgo de incendio forestal. Antes de realizar la actividad, infórmate de posibles estados de alerta declarados por las autoridades. Consulta los medios de comunicación. También puedes solicitar información al Centro de Servicios al Ciudadano del Cabildo de Tenerife (teléfono 922 239500 o 901 501 901).</p>
+    </div>
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="caption">
+                <h4>Contactar</h4>
+                <p>
+                    Dirección: Cabildo de Tenerife,<br>
+                    Plaza de España. 1,<br>
+                    38003 Santa Cruz de Tenerife.<br>
+                    Teléfono: 901 501 901 / 922 239 500
+                </p>
+            </div>
+            <div class="caption">
+                <h4>Servicios de la sede</h4>
+                <ul class="links">
+                    <li><a href="#">Anuncios</a></li>
+                    <li><a href="#">Verificación de documentos</a></li>
+                    <li><a href="#">Asesoría electrónica</a></li>
+                    <li><a href="#">Verificación de certificados</a></li>
+                    <li><a href="#">Fecha y hora</a></li>
+                </ul>
+            </div>
+            <div class="caption">
+                <h4>Enlaces de interés</h4>
+                <ul class="links">
+                    <li><a href="#">Portal</a></li>
+                    <li><a href="#">B.O.P.</a></li>
+                    <li><a href="#">Empleo</a></li>
+                    <li><a href="#">Contratante</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="socials">
+            <div class="socials-text">Redes Sociales</div>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="{% static 'img/facebook.webp' %}" alt="Facebook">
+            </a>
+            <a href="https://www.x.com" target="_blank">
+                <img src="{% static 'img/Xlogo.png' %}" alt="Twitter">
+            </a>
+        </div>
+
+        <div class="copyright">
+            Copyright ©2014 Cabildo de Tenerife
+        </div>
+    </footer>
+</body>
+</html>

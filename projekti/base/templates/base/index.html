@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+    <title>Test</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a class="logolink" href="http://www.tenerife.es/" target="_blank">
+                <img src="{% static 'img/logo.png' %}" alt="Logo" />
+            </a>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="https://centralreservas.tenerife.es/?a=1" target="_blank">SENDEROS</a></li>
+            <li><a href="https://centralreservas.tenerife.es/?a=2" target="_blank">CIRCULACION</a></li>
+            <li><a href="https://centralreservas.tenerife.es/?a=3" target="_blank">BARRANCO</a></li>
+            <li><a href="https://centralreservas.tenerife.es/?a=4" target="_blank">ESCALADA</a></li>
+            <li><a href="https://centralreservas.tenerife.es/?a=5" target="_blank">CAMPING</a></li>
+            <li><a href="https://centralreservas.tenerife.es/?a=8" target="_blank">GRUPOS</a></li>
+            <li><a href="https://centralreservas.tenerife.es/reservas" target="_blank">RESERVAS</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+    </nav>
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="{% static 'img/dino.jpg' %}">
+        </div>
+
+        <div class="mySlides">
+            <img src="{% static 'img/more.jpg' %}">
+        </div>
+
+        <div class="mySlides">
+            <img src="{% static 'img/kaktus.jpg' %}">
+        </div>
+
+    </div>
+    <br>
+    
+    <div class="booking-cards">
+
+        <div class="card">
+            <p>El grupo estará integrado por un máximo de 15 participantes.</p>
+        </div>
+
+
+        <div class="card">
+            <p>La visita debe transcurrir exclusivamente por los senderos que se muestran en el mapa de esta actividad y señalizados o indicados en la cartelería del espacio natural.</p>
+        </div>
+        
+        <div class="card">
+            <p>La actividad consiste en visitas de carácter recreativo o educativo a la Reserva Natural del Malpaís de Güímar de grupos organizados por centros educativos, entidades asociativas o empresas.</p>
+        </div>
+    
+    </div>
+    
+
+        <section class="container">
+            <div class="calendar">
+                <header>
+                    <h3></h3>
+                    <nav>
+                        <button id="prev"></button>
+                        <button id="next"></button>
+                    </nav>
+                </header>
+                <section>
+                    <ul class="days">
+                        <li>Dom</li>
+                        <li>Lun</li>
+                        <li>Mar</li>
+                        <li>Mié</li>
+                        <li>Jue</li>
+                        <li>Vie</li>
+                        <li>Sáb</li>
+                    </ul>
+                    <ul class="dates"></ul>
+                </section>
+            </div>
+            <div class="selection" id="selection" style="display: none;">
+                <p id="places"></p>
+                <input type="number" id="num-persons" min="1" max="15" placeholder="Número de personas" required>
+                <button id="next-step" class="next-step-button" disabled>Siguiente Paso</button>
+            </div>
+        </section>
+    </div>
+    </div>
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="caption">
+                <h4>Contactar</h4>
+                <p>
+                    Dirección: Cabildo de Tenerife,<br>
+                    Plaza de España. 1,<br>
+                    38003 Santa Cruz de Tenerife.<br>
+                    Teléfono: 901 501 901 / 922 239 500
+                </p>
+            </div>
+            <div class="caption">
+                <h4>Servicios de la sede</h4>
+                <ul class="links">
+                    <li><a href="#">Anuncios</a></li>
+                    <li><a href="#">Verificación de documentos</a></li>
+                    <li><a href="#">Asesoría electrónica</a></li>
+                    <li><a href="#">Verificación de certificados</a></li>
+                    <li><a href="#">Fecha y hora</a></li>
+                </ul>
+            </div>
+            <div class="caption">
+                <h4>Enlaces de interés</h4>
+                <ul class="links">
+                    <li><a href="#">Portal</a></li>
+                    <li><a href="#">B.O.P.</a></li>
+                    <li><a href="#">Empleo</a></li>
+                    <li><a href="#">Contratante</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="socials">
+            <div class="socials-text">Redes Sociales</div>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="{% static 'img/facebook.webp' %}" alt="Facebook">
+            </a>
+            <a href="https://www.x.com" target="_blank">
+                <img src="{% static 'img/Xlogo.png' %}" alt="Twitter">
+            </a>
+
+        <div class="copyright">
+            Copyright ©2014 Cabildo de Tenerife
+        </div>
+    </footer>
+
+    <script src="{% static 'scripts/main2.js' %}" type="module"></script>
+</body>
+</html>
